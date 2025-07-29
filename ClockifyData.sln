@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FF7660CC-1E7C-4B31-AD55-6A73D2B66D37}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockifyData", "ClockifyData.API\ClockifyData.csproj", "{011F94BC-059E-2839-62B4-29ED80F57B8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockifyData.Application", "ClockifyData.Application\ClockifyData.Application.csproj", "{7083FB57-68FA-F9AE-D681-8DC9E2699958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockifyData.Domain", "ClockifyData.Domain\ClockifyData.Domain.csproj", "{5C05369E-041A-2C73-5B6A-7B27525AB657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockifyData.Infrastructure", "ClockifyData.Infrastructure\ClockifyData.Infrastructure.csproj", "{0363718E-781B-EFEE-3EA1-71A733D26F81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{011F94BC-059E-2839-62B4-29ED80F57B8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011F94BC-059E-2839-62B4-29ED80F57B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011F94BC-059E-2839-62B4-29ED80F57B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011F94BC-059E-2839-62B4-29ED80F57B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7083FB57-68FA-F9AE-D681-8DC9E2699958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7083FB57-68FA-F9AE-D681-8DC9E2699958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7083FB57-68FA-F9AE-D681-8DC9E2699958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7083FB57-68FA-F9AE-D681-8DC9E2699958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C05369E-041A-2C73-5B6A-7B27525AB657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C05369E-041A-2C73-5B6A-7B27525AB657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C05369E-041A-2C73-5B6A-7B27525AB657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C05369E-041A-2C73-5B6A-7B27525AB657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0363718E-781B-EFEE-3EA1-71A733D26F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0363718E-781B-EFEE-3EA1-71A733D26F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0363718E-781B-EFEE-3EA1-71A733D26F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0363718E-781B-EFEE-3EA1-71A733D26F81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
