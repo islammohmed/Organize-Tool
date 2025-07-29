@@ -24,8 +24,12 @@ public class Task
     [Column(TypeName = "decimal(5,2)")]
     public decimal EstimateHours { get; set; }
 
+    [StringLength(50)]
+    public string? ClockifyId { get; set; }
+
     // Navigation properties
     public virtual Project Project { get; set; } = null!;
     public virtual User User { get; set; } = null!;
     public virtual ICollection<TimeEntry> TimeEntries { get; set; } = new List<TimeEntry>();
+    // UserTasks navigation removed - assignments handled via direct UserId relationship
 }

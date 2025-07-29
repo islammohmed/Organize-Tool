@@ -10,4 +10,7 @@ public interface ITimeEntryRepository : IGenericRepository<TimeEntry>
     Task<IEnumerable<TimeEntry>> GetByUserAndDateRangeAsync(int userId, DateTime startDate, DateTime endDate, CancellationToken cancellationToken = default);
     Task<double> GetTotalHoursByUserAsync(int userId, CancellationToken cancellationToken = default);
     Task<double> GetTotalHoursByTaskAsync(int taskId, CancellationToken cancellationToken = default);
+    Task<IEnumerable<TimeEntry>> GetTimeEntriesByUserIdAsync(int userId, CancellationToken cancellationToken = default);
+    Task<IEnumerable<TimeEntry>> GetTimeEntriesByDateRangeAsync(DateTime from, DateTime to, CancellationToken cancellationToken = default);
+    Task<IEnumerable<TimeEntry>> GetUnsyncedTimeEntriesAsync(CancellationToken cancellationToken = default);
 }

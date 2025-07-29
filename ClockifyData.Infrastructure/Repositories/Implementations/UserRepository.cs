@@ -35,10 +35,9 @@ public class UserRepository : GenericRepository<User>, IUserRepository
 
     public override async Task<User?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
+        // Temporarily removing includes to avoid schema mismatch issues
+        // TODO: Apply migrations properly to include ClockifyId columns
         return await _dbSet
-            .Include(u => u.Projects)
-            .Include(u => u.Tasks)
-            .Include(u => u.TimeEntries)
             .FirstOrDefaultAsync(u => u.UserId == id, cancellationToken);
     }
 }

@@ -3,30 +3,24 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClockifyData.Domain.Entities;
 
-public class TimeEntry
+public class UserTask
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int EntryId { get; set; }
+    public int UserTaskId { get; set; }
 
     [Required]
-    [ForeignKey(nameof(User))]
     public int UserId { get; set; }
 
     [Required]
-    [ForeignKey(nameof(Task))]
     public int TaskId { get; set; }
 
-    [Required]
-    public DateTime StartTime { get; set; }
-
-    [Required]
-    public DateTime EndTime { get; set; }
-
-    [StringLength(50)]
-    public string? ClockifyId { get; set; }
+    public DateTime AssignedDate { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
+    [ForeignKey("UserId")]
     public virtual User User { get; set; } = null!;
+
+    [ForeignKey("TaskId")]
     public virtual Task Task { get; set; } = null!;
 }

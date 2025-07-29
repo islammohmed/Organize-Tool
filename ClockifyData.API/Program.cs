@@ -14,6 +14,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Register repositories
 builder.Services.AddRepositories();
 
+// Register services
+builder.Services.AddServices();
+
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();

@@ -51,4 +51,12 @@ public class ProjectRepository : GenericRepository<Project>, IProjectRepository
             .Include(p => p.Tasks)
             .FirstOrDefaultAsync(p => p.ProjectId == id, cancellationToken);
     }
+
+    public async Task<IEnumerable<Project>> GetUnsyncedProjectsAsync(CancellationToken cancellationToken = default)
+    {
+        return await _dbSet
+            .Where(p => string.IsNullOrEmpty(p.ClockifyId))
+            .Include(p => p.User)
+            .ToListAsync(cancellationToken);
+    }
 }

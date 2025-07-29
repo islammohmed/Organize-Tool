@@ -74,4 +74,22 @@ public class TaskRepository : GenericRepository<DomainTask>, ITaskRepository
             .Include(t => t.TimeEntries)
             .FirstOrDefaultAsync(t => t.TaskId == id, cancellationToken);
     }
+
+    public async Task<IEnumerable<DomainTask>> GetTasksByProjectIdAsync(int projectId, CancellationToken cancellationToken = default)
+    {
+        return await _dbSet
+            .Include(t => t.Project)
+            .Include(t => t.User)
+            .Where(t => t.ProjectId == projectId)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IEnumerable<DomainTask>> GetUnsyncedTasksAsync(CancellationToken cancellationToken = default)
+    {
+        return await _dbSet
+            .Include(t => t.Project)
+            .Include(t => t.User)
+            .Where(t => string.IsNullOrEmpty(t.ClockifyId))
+            .ToListAsync(cancellationToken);
+    }
 }

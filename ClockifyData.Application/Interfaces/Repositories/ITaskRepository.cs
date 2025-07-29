@@ -11,4 +11,6 @@ public interface ITaskRepository : IGenericRepository<DomainTask>
     Task<IEnumerable<DomainTask>> GetTasksWithTimeEntriesAsync(CancellationToken cancellationToken = default);
     Task<DomainTask?> GetWithTimeEntriesByIdAsync(int taskId, CancellationToken cancellationToken = default);
     Task<IEnumerable<DomainTask>> GetByEstimateHoursGreaterThanAsync(decimal minHours, CancellationToken cancellationToken = default);
+    Task<IEnumerable<DomainTask>> GetTasksByProjectIdAsync(int projectId, CancellationToken cancellationToken = default);
+    Task<IEnumerable<DomainTask>> GetUnsyncedTasksAsync(CancellationToken cancellationToken = default);
 }

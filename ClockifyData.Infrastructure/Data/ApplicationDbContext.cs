@@ -16,6 +16,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Project> Projects { get; set; }
     public DbSet<DomainTask> Tasks { get; set; }
     public DbSet<TimeEntry> TimeEntries { get; set; }
+    // UserTasks table not needed - removed as per user request
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -61,5 +62,17 @@ public class ApplicationDbContext : DbContext
         // Additional configurations
         modelBuilder.Entity<TimeEntry>()
             .ToTable(t => t.HasCheckConstraint("CK_TimeEntry_EndTime_After_StartTime", "EndTime > StartTime"));
+
+        // Keep ClockifyId properties ignored to match current MySQL schema
+        modelBuilder.Entity<Project>()
+            .Ignore(p => p.ClockifyId);
+        
+        modelBuilder.Entity<DomainTask>()
+            .Ignore(t => t.ClockifyId);
+            
+        modelBuilder.Entity<TimeEntry>()
+            .Ignore(te => te.ClockifyId); // ClockifyId column doesn't exist in MySQL schema
+
+        // UserTask entity permanently removed - not needed for current requirements
     }
 }

@@ -8,4 +8,5 @@ public interface IProjectRepository : IGenericRepository<Project>
     Task<Project?> GetByNameAsync(string name, CancellationToken cancellationToken = default);
     Task<IEnumerable<Project>> GetProjectsWithTasksAsync(CancellationToken cancellationToken = default);
     Task<Project?> GetWithTasksByIdAsync(int projectId, CancellationToken cancellationToken = default);
+    Task<IEnumerable<Project>> GetUnsyncedProjectsAsync(CancellationToken cancellationToken = default);
 }

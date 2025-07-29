@@ -17,6 +17,9 @@ public class Project
     [ForeignKey(nameof(User))]
     public int UserId { get; set; }
 
+    [StringLength(50)]
+    public string? ClockifyId { get; set; }
+
     // Navigation properties
     public virtual User User { get; set; } = null!;
     public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
